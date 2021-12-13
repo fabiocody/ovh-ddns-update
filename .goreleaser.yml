@@ -1,0 +1,25 @@
+before:
+  hooks:
+    - go mod tidy
+build:
+  ldflags:
+    - -s -w
+  binary: ovh-ddns-update
+  goos:
+    - darwin
+    - linux
+  goarch:
+    - amd64
+    - 386
+    - arm
+    - arm64
+  goarm:
+    - 5
+    - 6
+    - 7
+  ignore:
+    - goos: darwin
+      goarch: 386
+archives:
+  - name_template: '{{.Os}}_{{.Arch}}{{if .Arm}}v{{.Arm}}{{end}}_{{ .ProjectName }}'
+    format: tar.gz

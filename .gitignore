@@ -261,3 +261,4 @@ $RECYCLE.BIN/
 
 *.db
 *.sqlite3
+dist/
