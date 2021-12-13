@@ -33,7 +33,7 @@ func GetPreviousIP() string {
 		}
 		HandleError(result.Error)
 	}
-	log.Debugf("Previous IP is %s", address.Value)
+	log.Infof("Previous IP is %s", address.Value)
 	return address.Value
 }
 
