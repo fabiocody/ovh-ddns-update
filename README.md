@@ -2,7 +2,7 @@
 
 ## Usage
 
-```bash
+```
 Usage: ovh-ddns-update [--database DATABASE] DOMAIN OVHID OVHPASSWORD
 
 Positional arguments:
