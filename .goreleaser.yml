@@ -4,8 +4,10 @@ before:
 
 builds:
   - id: linux
+    env:
+      - CGO_ENABLED=1
     ldflags:
-      - -s -w -extldflags=-static
+      - -s -w
     binary: ovh-ddns-update
     goos:
       - linux
