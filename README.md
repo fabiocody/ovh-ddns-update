@@ -11,6 +11,6 @@ Positional arguments:
   OVHPASSWORD            OVH DynHost identifier password
 
 Options:
-  --database DATABASE    database file [default: .ovh-ddns-update.sqlite3]
+  --database DATABASE    database file [default: .ovh-ddns-update.db]
   --help, -h             display this help and exit
 ```
