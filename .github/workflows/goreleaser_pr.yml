@@ -1,11 +1,9 @@
 name: goreleaser
 
-on:
-  push:
-    tags: [ 'v*' ]
+on: [pull_request]
 
 jobs:
-  goreleaser:
+  goreleaser_pr:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,7 +20,7 @@ jobs:
           # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
           version: latest
-          args: release --rm-dist
+          args: build --rm-dist --snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
