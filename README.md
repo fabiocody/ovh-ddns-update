@@ -58,6 +58,15 @@ Common targets: `linux/amd64`, `linux/386`, `linux/arm` (set `GOARM=5`, `6` or `
 
 Release binaries are built with [GoReleaser](https://goreleaser.com/) (configuration in `.goreleaser.yml`). Pushing a tag matching `v*` triggers the `goreleaser_release` GitHub Actions workflow, which publishes a binary per OS/architecture to the GitHub release. Pull requests run a snapshot build (`goreleaser build --snapshot`) to check that everything still compiles.
 
+To publish a new version, make sure `main` contains what you want to release, then create and push a tag starting with `v`:
+
+```sh
+git tag v1.0.3
+git push origin v1.0.3
+```
+
+The version used in the artifact names (`ovh-ddns-update_1.0.3_linux_amd64`, ...) is taken from the tag, without the leading `v`. Check the latest existing tag with `git describe --tags --abbrev=0` to pick the next one.
+
 To try a release build locally:
 
 ```sh
